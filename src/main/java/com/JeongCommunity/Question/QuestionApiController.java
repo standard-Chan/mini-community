@@ -47,4 +47,11 @@ public class QuestionApiController {
         questionService.delete(id);
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/api/questions/{id}")
+    public ResponseEntity<Question> updateQuestion(@PathVariable long id,
+                                                           @RequestBody UpdateQuestionRequest request) {
+        Question updateQuestion = questionService.update(id, request);
+        return ResponseEntity.ok().body(updateQuestion);
+    }
 }

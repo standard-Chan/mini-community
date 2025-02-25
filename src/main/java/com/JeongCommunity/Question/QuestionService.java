@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,5 +32,15 @@ public class QuestionService {
 
     public void delete(long id) {
         questionRepository.deleteById(id);
+    }
+
+    @Transactional
+    public Question update(long id, UpdateQuestionRequest request) {
+        Question question = questionRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found : " + id));
+
+        question.update(request.getTitle(), request.getContent());
+
+        return question;
     }
 }

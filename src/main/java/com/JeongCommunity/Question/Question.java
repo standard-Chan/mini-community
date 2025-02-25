@@ -1,6 +1,7 @@
 package com.JeongCommunity.Question;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.*;
 import org.springframework.cglib.core.Local;
 
@@ -31,6 +32,11 @@ public class Question {
         this.title = title;
         this.content = content;
         //this.createDate = localDateTime;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
 }
