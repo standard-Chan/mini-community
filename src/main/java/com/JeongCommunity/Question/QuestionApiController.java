@@ -25,4 +25,15 @@ public class QuestionApiController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedQuestion);
     }
+
+    @GetMapping("/api/questions")
+    public ResponseEntity<List<QuestionResponse>> findAllQuestions() {
+        List<QuestionResponse> questions = questionService.findAll()
+                .stream()
+                .map(QuestionResponse::new)
+                .toList();
+
+        return ResponseEntity.ok()
+                .body(questions);
+    }
 }

@@ -14,14 +14,13 @@ public class QuestionService {
 
     private final QuestionRepository questionRepository;
 
-    public List<Question> getAllQuestion() {
-        List<Question> questions = questionRepository.findAll();
-        return questions;
+    public List<Question> findAll() {
+        return questionRepository.findAll();
     }
 
     public Question save(AddQuestionRequest request) {
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2");
-        System.out.println(request);
+        System.out.println("saved data's title");
+        System.out.println(request.getTitle());
         return questionRepository.save(request.toEntity());
     }
 
