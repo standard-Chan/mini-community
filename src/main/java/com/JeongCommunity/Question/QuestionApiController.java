@@ -2,13 +2,11 @@ package com.JeongCommunity.Question;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,5 +33,18 @@ public class QuestionApiController {
 
         return ResponseEntity.ok()
                 .body(questions);
+    }
+
+    @GetMapping("/api/questions/{id}")
+    public ResponseEntity<QuestionResponse> findQuestion(@PathVariable long id) {
+        Question question = questionService.findById(id);
+        return ResponseEntity.ok()
+                .body(new QuestionResponse(question));
+    }
+
+    @DeleteMapping("/api/questions/{id}")
+    public ResponseEntity<QuestionResponse> deleteQuestion(@PathVariable long id) {
+        questionService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }

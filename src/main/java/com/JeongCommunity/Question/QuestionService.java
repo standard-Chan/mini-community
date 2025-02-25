@@ -24,7 +24,12 @@ public class QuestionService {
         return questionRepository.save(request.toEntity());
     }
 
-    public void deleteQuestion(Integer id) {
+    public Question findById(Long id) {
+        return questionRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+    }
+
+    public void delete(long id) {
         questionRepository.deleteById(id);
     }
 }
