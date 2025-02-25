@@ -1,5 +1,6 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.dto;
 
+import com.JeongCommunity.Question.Question;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +20,8 @@ public class AddQuestionRequest {
     // DTO를 엔티티로 만들어주는 메서드 (엔티티로 변환하는 용도로 사용한다.)
     public Question toEntity() {
         return Question.builder()
-                .title(title).
-                content(content)
+                .title(title)
+                .content(content)
                 .build();
     }
 }

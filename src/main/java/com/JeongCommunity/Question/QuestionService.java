@@ -1,12 +1,11 @@
 package com.JeongCommunity.Question;
 
+import com.JeongCommunity.dto.AddQuestionRequest;
+import com.JeongCommunity.dto.UpdateQuestionRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RequiredArgsConstructor // final, @NotNull인 필드 생성자 자동으로 생성

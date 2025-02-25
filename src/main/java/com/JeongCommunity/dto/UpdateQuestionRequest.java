@@ -1,4 +1,4 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

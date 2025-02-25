@@ -1,9 +1,9 @@
 package com.JeongCommunity.Question;
 
+import com.JeongCommunity.dto.AddQuestionRequest;
+import com.JeongCommunity.dto.UpdateQuestionRequest;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +17,13 @@ public class QuestionApiController {
 
     private final QuestionService questionService;
 
-    @PostMapping("/api/question")
+    @PostMapping("/api/questions")
     public ResponseEntity<Question> addQuestion(@RequestBody AddQuestionRequest request) {
         Question savedQuestion = questionService.save(request);
+
+        // client에게 http를 다시 보내준다.
+        // status = CREATED (201)
+        // body에는 저장된 question
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedQuestion);
     }
