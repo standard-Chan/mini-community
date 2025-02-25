@@ -41,4 +41,13 @@
 > }
 > ```
 > @RequiredArgsConstructor : Lombok을 사용하면 자동으로 주입이 가능하다.
-> 
+
+
+# 응답코드
+
+- 200 OK : 성공적으로 수행
+- 201 Created : 성공적으로 수행 + 리소스 생성
+- 400 Bad Request : 요청 값이 잚못된
+- 403 Forbidden : 권한이 없음
+- 404 Not Found : 리소스가 없음
+- 500 Internal Server Error : 서버 상 문제
