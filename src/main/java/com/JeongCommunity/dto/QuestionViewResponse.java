@@ -2,15 +2,16 @@ package com.JeongCommunity.dto;
 
 import com.JeongCommunity.Question.Question;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-
+@NoArgsConstructor
 @Getter
 public class QuestionViewResponse {
-    private final Long id;
-    private final String title;
-    private final String content;
-    private final LocalDateTime createdAt;
+    private Long id;
+    private String title;
+    private String content;
+    private LocalDateTime createdAt;
 
     public QuestionViewResponse(Question question) {
         this.id = question.getId();

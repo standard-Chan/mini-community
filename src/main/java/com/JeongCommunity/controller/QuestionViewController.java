@@ -39,4 +39,17 @@ public class QuestionViewController {
         return "question";
     }
 
+    // 글 작성 및 수정
+    @GetMapping("/new-question")
+    public String newQuestion(@RequestParam(required = false) Long id, Model model) {
+        // 글 새로 작성
+        if (id == null) {
+            model.addAttribute("question", new QuestionViewResponse());
+        } else {
+            Question question = questionService.findById(id);
+            model.addAttribute("question", new QuestionViewResponse(question));
+        }
+
+        return "newQuestion";
+    }
 }
