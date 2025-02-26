@@ -1,5 +1,6 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.dto;
 
+import com.JeongCommunity.domain.Question;
 import lombok.Getter;
 
 @Getter

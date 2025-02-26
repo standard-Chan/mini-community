@@ -1,5 +1,6 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.repository;
 
+import com.JeongCommunity.domain.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

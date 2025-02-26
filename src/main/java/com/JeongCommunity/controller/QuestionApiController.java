@@ -1,5 +1,8 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.controller;
 
+import com.JeongCommunity.domain.Question;
+import com.JeongCommunity.dto.QuestionResponse;
+import com.JeongCommunity.service.QuestionService;
 import com.JeongCommunity.dto.AddQuestionRequest;
 import com.JeongCommunity.dto.UpdateQuestionRequest;
 import lombok.Getter;

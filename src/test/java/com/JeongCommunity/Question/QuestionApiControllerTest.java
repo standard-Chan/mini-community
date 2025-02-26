@@ -1,6 +1,8 @@
 package com.JeongCommunity.Question;
 
+import com.JeongCommunity.domain.Question;
 import com.JeongCommunity.dto.AddQuestionRequest;
+import com.JeongCommunity.repository.QuestionRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

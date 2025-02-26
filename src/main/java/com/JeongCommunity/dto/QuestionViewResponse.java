@@ -1,6 +1,6 @@
 package com.JeongCommunity.dto;
 
-import com.JeongCommunity.Question.Question;
+import com.JeongCommunity.domain.Question;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

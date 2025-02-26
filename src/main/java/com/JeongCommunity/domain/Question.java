@@ -1,9 +1,7 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.domain;
 
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
 import lombok.*;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 

@@ -1,7 +1,9 @@
-package com.JeongCommunity.Question;
+package com.JeongCommunity.service;
 
+import com.JeongCommunity.domain.Question;
 import com.JeongCommunity.dto.AddQuestionRequest;
 import com.JeongCommunity.dto.UpdateQuestionRequest;
+import com.JeongCommunity.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
